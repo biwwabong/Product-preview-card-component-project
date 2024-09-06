@@ -1,0 +1,16 @@
+:root {
+  /* Color Variables */
+  --dark-cyan: hsl(158, 36%, 37%); /* Main color used for accents and buttons */
+  --cream: hsl(30, 38%, 92%); /* Light background color */
+  --very-dark-blue: hsl(212, 21%, 14%); /* Dark color for main text */
+  --dark-grayish-blue: hsl(228, 12%, 48%); /* Medium color for secondary text */
+  --white: hsl(0, 0%, 100%); /* White color for backgrounds and text */
+
+  /* Font and Size Variables */
+  --ff-headings: "Fraunces", serif; /* Main font for body text */
+  --ff-main: "Montserrat", sans-serif; /* Font for headings */
+  --fs-main: 1rem; /* Base font size */
+  --fs-headings: 1.5rem; /* Font size for headings */
+  --fw-500: 500; /* Font weight medium */
+  --fw-700: 700; /* Font weight bold */
+}

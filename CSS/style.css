@@ -1,0 +1,210 @@
+/* ================== CSS Reset ================== */
+/* Comprehensive CSS Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================== Global Variables ================== */
+:root {
+  /* Global color variables */
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Global typography variables */
+  --font-family-product-card: "Montserrat", sans-serif;
+  --font-family-headings: "Fraunces", serif;
+  --font-size-base: 87.5%; /* Sets base font size to 14px */
+  --font-size-title: 2.2rem; /* 18px */
+  --font-size-price: 2rem;
+  --font-weight-500: 500;
+  --font-weight-700: 700;
+
+  /* Base font-size applied globally */
+  font-size: var(--font-size-base); /* 87.5% of 16px (14px) */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font: inherit;
+}
+
+/* ================== Global Styles ================== */
+
+body {
+  /* Layout/Positioning */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  /* Typography */
+  font-family: var(--font-family-product-card);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-500);
+
+  /* Visual Appearance */
+  color: var(--dark-grayish-blue);
+  background-color: var(--cream);
+  padding: 1.2em;
+}
+
+/* ================== Typography ================== */
+
+h1,
+h2 {
+  line-height: 1.1;
+}
+
+h1,
+h2,
+p {
+  padding-bottom: 1rem;
+}
+
+h1 {
+  font-family: var(--font-family-headings);
+  font-size: 1.5rem;
+  font-weight: var(--font-weight-700);
+}
+
+h2 {
+  font-family: var(--font-family-product-card);
+  font-size: 1.25rem;
+  font-weight: var(--font-weight-500);
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.product-category {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-500);
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+}
+
+.title {
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-700);
+  color: var(--very-dark-blue);
+}
+
+.product-prices span {
+  font-family: var(--font-family-headings);
+  font-size: var(--font-size-price);
+  font-weight: var(--font-weight-700);
+  color: var(--dark-cyan);
+}
+
+.product-prices s {
+  color: var(--dark-grayish-blue);
+}
+
+.product-text-add-to-cart {
+  color: var(--white);
+}
+
+/* ================== Layout Styles ================== */
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.card-container {
+  background-color: var(--white);
+  box-shadow: 0 0 0.05rem 0.05rem rgba(143, 143, 143, 0.05);
+  max-width: 375px;
+  width: 100%; /* Ensure full width on smaller screens */
+  margin: 0 1rem;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.card-container .main-product-img {
+  width: 100%;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.card-container .main-product-img img {
+  width: 100%;
+  border-radius: 1em 1em 0 0;
+}
+
+.product-text-container {
+  padding: 2em;
+}
+
+.product-prices {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+/* ================== Components ================== */
+
+.product-text-add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 0.2rem;
+  background-color: var(--dark-cyan);
+  padding: 1em 3em;
+  border: none;
+  border-radius: 0.5rem; /* Consistent border-radius */
+  color: var(--white);
+  cursor: pointer;
+}
+
+.product-text-add-to-cart img {
+  margin-right: 0.5em;
+}
+
+.product-text-add-to-cart span {
+  font-weight: var(--font-weight-500);
+}
+
+/* ================== Media Queries for Desktop ================== */
+
+@media (min-width: 600px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 550px;
+  }
+
+  .card-container .main-product-img img {
+    height: 100%;
+    object-fit: cover; /* Ensure the image fills the space without distortion */
+    border-radius: 1rem 0 0 1rem;
+  }
+
+  h1,
+  h2,
+  p {
+    padding-bottom: 1.2rem;
+  }
+
+  .product-category {
+    margin-top: 0.5rem;
+  }
+}

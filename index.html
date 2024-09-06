@@ -1,36 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensures that the site is responsive by scaling properly on all devices -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Product preview card component</title>
+    <!-- Preconnect to Google Fonts for improved performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Import Montserrat and Fraunces fonts from Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  Perfume
+    <!-- Favicon for the site -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
 
-  Gabrielle Essence Eau De Parfum
+    <!-- Linking to external CSS file for styling -->
+    <link rel="stylesheet" href="CSS/style.css" />
 
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
+    <title>Frontend Mentor | Product preview card component</title>
+    <!-- Descriptive and concise title for SEO and clarity -->
+  </head>
 
-  $149.99
-  $169.99
+  <body>
+    <!-- ======================= MAIN CONTAINER START ======================= -->
+    <main class="main-container">
+      <!-- ===================== PRODUCT CARD CONTAINER START ===================== -->
+      <section class="card-container">
+        <!-- =========== MAIN IMAGE AREA START =========== -->
+        <!-- Contains responsive images for the product, optimized for different screen sizes -->
+        <div class="main-product-img">
+          <picture>
+            <!-- For devices with a width of 600px and above, load the desktop version of the image -->
+            <source
+              media="(min-width: 600px)"
+              srcset="./images/image-product-desktop.jpg 600w"
+              sizes="50vw"
+            />
+            <!-- Fallback image for mobile devices, optimized for smaller screens -->
+            <img
+              src="./images/image-product-mobile.jpg"
+              srcset="./images/image-product-mobile.jpg 480w"
+              sizes="90vw"
+              alt="Gabrielle Essence Eau De Parfum bottle"
+            />
+          </picture>
+        </div>
+        <!-- =========== MAIN IMAGE AREA END =========== -->
 
-  Add to Cart
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+        <!-- =========== PRODUCT TEXT AREA START =========== -->
+        <div class="product-text-container">
+          <!-- =========== PRODUCT TITLE AND CATEGORY START =========== -->
+          <!-- Product category as a heading for better semantic structure -->
+          <h2 class="product-category">Perfume</h2>
+          <!-- Product name -->
+          <h1 class="title">Gabrielle Essence Eau De Parfum</h1>
+          <!-- =========== PRODUCT TITLE AND CATEGORY END =========== -->
+
+          <!-- =========== PRODUCT DESCRIPTION START =========== -->
+          <p>
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+          <!-- =========== PRODUCT DESCRIPTION END =========== -->
+
+          <!-- =========== PRODUCT PRICE AREA START =========== -->
+          <div class="price-wrapper">
+            <p class="product-prices">
+              <!-- New discounted price -->
+              <span>$149.99</span>
+              <!-- Old price crossed out -->
+              <s>$169.99</s>
+            </p>
+          </div>
+          <!-- =========== PRODUCT PRICE AREA END =========== -->
+
+          <!-- =========== ADD TO CART BUTTON START =========== -->
+          <button class="product-text-add-to-cart">
+            <!-- Cart icon, hidden from screen readers for accessibility -->
+            <img src="./images/icon-cart.svg" alt="" aria-hidden="true" />
+            <span>Add to Cart</span>
+          </button>
+          <!-- =========== ADD TO CART BUTTON END =========== -->
+        </div>
+        <!-- =========== PRODUCT TEXT AREA END =========== -->
+      </section>
+      <!-- ===================== PRODUCT CARD CONTAINER END ===================== -->
+    </main>
+    <!-- ======================= MAIN CONTAINER END ======================= -->
+  </body>
 </html>
